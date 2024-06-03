@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import Cabecalho from "./components/Head"
 import EstilosGlobais from "./components/GlobalStyles"
+import SideBar from "./components/SideBar"
 
 const BackgroundGradient = styled.div`
     background: linear-gradient(#041833 100%,#04244F 100%,#154580 100%);
@@ -13,6 +14,7 @@ function App() {
     <BackgroundGradient>
       <EstilosGlobais />
       <Cabecalho />
+      <SideBar></SideBar>
     </BackgroundGradient>
 
   )
