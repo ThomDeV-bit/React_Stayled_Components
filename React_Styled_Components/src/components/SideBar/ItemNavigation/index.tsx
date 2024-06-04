@@ -8,16 +8,17 @@ interface Props {
 }
 
 interface ColorProps {
-    ativo : Boolean
+    $ative: Boolean
 }
 
 const StylezedItemsLists = styled.li<ColorProps>`
+
     color : white;
-    font-size: 24px;
-    line-height: 10px;
+    font-size: 22px;
+    line-height: 20px;
     margin-bottom: 30px;
     cursor: pointer;
-    color: ${(props: ColorProps) => props.ativo ? '#7B78E5' : '#D9D9D9'};
+    color: ${(props: ColorProps) => props.$ative ? '#7B78E5' : '#D9D9D9'};
     display: flex;
     align-items: center;
     gap: 22px;
@@ -26,7 +27,7 @@ const StylezedItemsLists = styled.li<ColorProps>`
 
 const ItemNavigation = ({ text, iconeAtivo, iconeInativo, ativo = false }: Props) => {
     return (
-        <StylezedItemsLists ativo={ativo}>
+        <StylezedItemsLists $ative={ativo}>
             <img src={ativo ? iconeAtivo : iconeInativo} alt=""></img>
             {text}
         </StylezedItemsLists>

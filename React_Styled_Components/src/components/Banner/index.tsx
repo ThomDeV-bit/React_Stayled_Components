@@ -1,10 +1,10 @@
 import styled from "styled-components"
 
 const BannerStylezed = styled.figure`
-    width: 70%;
     opacity: 90%;
+    margin-top: 0px;
     height: 328px;
-    margin-right: 10px;
+    margin-right: 30px;
     border-radius: 20px;
     background-image: url("/images/Foto-destaque.png");
     background-repeat: no-repeat;

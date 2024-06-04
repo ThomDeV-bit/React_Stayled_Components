@@ -6,58 +6,49 @@ const StylizedList = styled.ul`
     list-style : none;
     padding:0;
     margin: 0;
-    width: 212;
+    width: 200;
 `
 
-const AssideContainer = styled.div`
-    width : 100%;    
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-
-`
 
 const SideBar = () => {
     return (
-        <AssideContainer>
-            <aside>
-                <nav>
-                    <StylizedList>
-                        <ItemNavigation
-                            ativo={true}
-                            iconeAtivo="/images/home-ativo.png"
-                            iconeInativo="/images/home-inativo.png"
-                            text={"Home"}>
-                        </ItemNavigation>
-                        <ItemNavigation
-                            ativo={true}
-                            iconeAtivo="/images/mais-vistas-ativo.png"
-                            iconeInativo="/images/mais-vistas-inativo.png"
-                            text={"Mais Vistas"}>
-                        </ItemNavigation>
-                        <ItemNavigation
-                            ativo={true}
-                            iconeAtivo="/images/mais-curtidas-ativo.png"
-                            iconeInativo="/images/mais-curtidas-inativo.png"
-                            text={"Mais Curtidas"}>
-                        </ItemNavigation>
-                        <ItemNavigation
-                            ativo={true}
-                            iconeAtivo="/images/novas-ativo.png"
-                            iconeInativo="/images/novas-inativo.png"
-                            text={"Novas"}>
-                        </ItemNavigation>
-                        <ItemNavigation
-                            ativo={true}
-                            iconeAtivo="/images/surpreenda-me-ativo.png"
-                            iconeInativo="/images/surpreenda-me-inativo.png"
-                            text={"Surpreenda-me"}>
-                        </ItemNavigation>
-                    </StylizedList>
-                </nav>
-            </aside>
-            <Banner></Banner>
-        </AssideContainer>
+        <aside>
+            <nav>
+                <StylizedList>
+                    <ItemNavigation
+                        ativo={true}
+                        iconeAtivo="/images/home-ativo.png"
+                        iconeInativo="/images/home-inativo.png"
+                        text={"Home"}>
+                    </ItemNavigation>
+                    <ItemNavigation
+                        ativo={true}
+                        iconeAtivo="/images/mais-vistas-ativo.png"
+                        iconeInativo="/images/mais-vistas-inativo.png"
+                        text={"Mais Vistas"}>
+                    </ItemNavigation>
+                    <ItemNavigation
+                        ativo={true}
+                        iconeAtivo="/images/mais-curtidas-ativo.png"
+                        iconeInativo="/images/mais-curtidas-inativo.png"
+                        text={"Mais Curtidas"}>
+                    </ItemNavigation>
+                    <ItemNavigation
+                        ativo={true}
+                        iconeAtivo="/images/novas-ativo.png"
+                        iconeInativo="/images/novas-inativo.png"
+                        text={"Novas"}>
+                    </ItemNavigation>
+                    <ItemNavigation
+                        ativo={true}
+                        iconeAtivo="/images/surpreenda-me-ativo.png"
+                        iconeInativo="/images/surpreenda-me-inativo.png"
+                        text={"Surpreenda-me"}>
+                    </ItemNavigation>
+                </StylizedList>
+            </nav>
+        </aside>
+
 
     )
 }
