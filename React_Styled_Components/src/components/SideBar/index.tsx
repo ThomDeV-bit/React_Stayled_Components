@@ -1,46 +1,64 @@
 import styled from "styled-components"
+import ItemNavigation from "./ItemNavigation"
+import Banner from "../Banner"
 
 const StylizedList = styled.ul`
     list-style : none;
     padding:0;
     margin: 0;
-   width: 212;
+    width: 212;
+`
+
+const AssideContainer = styled.div`
+    width : 100%;    
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
 `
 
 const SideBar = () => {
     return (
-        <aside>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="">
-                            Inicio
-                        </a>
+        <AssideContainer>
+            <aside>
+                <nav>
+                    <StylizedList>
+                        <ItemNavigation
+                            ativo={true}
+                            iconeAtivo="/images/home-ativo.png"
+                            iconeInativo="/images/home-inativo.png"
+                            text={"Home"}>
+                        </ItemNavigation>
+                        <ItemNavigation
+                            ativo={true}
+                            iconeAtivo="/images/mais-vistas-ativo.png"
+                            iconeInativo="/images/mais-vistas-inativo.png"
+                            text={"Mais Vistas"}>
+                        </ItemNavigation>
+                        <ItemNavigation
+                            ativo={true}
+                            iconeAtivo="/images/mais-curtidas-ativo.png"
+                            iconeInativo="/images/mais-curtidas-inativo.png"
+                            text={"Mais Curtidas"}>
+                        </ItemNavigation>
+                        <ItemNavigation
+                            ativo={true}
+                            iconeAtivo="/images/novas-ativo.png"
+                            iconeInativo="/images/novas-inativo.png"
+                            text={"Novas"}>
+                        </ItemNavigation>
+                        <ItemNavigation
+                            ativo={true}
+                            iconeAtivo="/images/surpreenda-me-ativo.png"
+                            iconeInativo="/images/surpreenda-me-inativo.png"
+                            text={"Surpreenda-me"}>
+                        </ItemNavigation>
+                    </StylizedList>
+                </nav>
+            </aside>
+            <Banner></Banner>
+        </AssideContainer>
 
-                    </li>
-                    <li>
-                        <a href="">
-                            Mais Vistas
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            Mais Curtidas
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            Novas
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            Surprenda-me
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
     )
 }
 

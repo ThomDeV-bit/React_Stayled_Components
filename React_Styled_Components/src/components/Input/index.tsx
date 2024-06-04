@@ -6,7 +6,7 @@ const StylezedContainer = styled.div`
     position: relative;
     display: inline-block;
     right: 30px;
-    width: 50%
+    width: 50%;
 `;
 
 
@@ -33,7 +33,7 @@ const IconLupa = styled.img`
     width: 32px;
     height: 32px;
     cursor:pointer;
-`;
+`
 
 const Input = ({ text }: Props) => {
     return (

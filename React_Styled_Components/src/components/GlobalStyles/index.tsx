@@ -143,6 +143,8 @@ const EstilosGlobais = createGlobalStyle`
     [hidden] {
     display: none;
     }
+
+
 `
 
 export default EstilosGlobais
