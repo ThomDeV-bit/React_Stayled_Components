@@ -14,7 +14,7 @@ function App() {
     <BackgroundGradient>
       <EstilosGlobais />
       <Cabecalho />
-      <SideBar></SideBar>
+      <SideBar/>
     </BackgroundGradient>
 
   )
