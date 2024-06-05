@@ -5,7 +5,7 @@ import SideBar from "./components/SideBar"
 import Banner from "./components/Banner"
 import Galeria from "./components/Galeria"
 import fotos from './fotos.json'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ModalZoom from "./components/ModalZoom"
 
 
@@ -24,21 +24,23 @@ const AppContainer = styled.div`
 `
 
 const MainContainer = styled.main`
-    width : 100%;    
-    display: flex;
+  width : 100%;    
+  display: flex;
   justify-content: space-between;
 
 `
 const GaleriaSection = styled.section`
-  width:  94%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   flex-grow: 1;
 `
+
+
 const App = () => {
   const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos)
-  const [fotoSelecionada, setFotoSelecionada] = useState(fotos[0])
+  const [fotoSelecionada, setFotoSelecionada] = useState(null)
+
   return (
 
     <BackgroundGradient>
@@ -55,7 +57,7 @@ const App = () => {
           </GaleriaSection>
         </MainContainer>
       </AppContainer>
-      <ModalZoom foto={fotoSelecionada}></ModalZoom>
+      <ModalZoom foto={fotoSelecionada} aoFechar={() => setFotoSelecionada(fotoSelecionada)}></ModalZoom>
     </BackgroundGradient >
 
   )

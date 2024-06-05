@@ -12,7 +12,7 @@ interface Fotos {
 
 interface Props {
     foto: Fotos
-    aoZoomSolicitado: any
+    aoZoomSolicitado?: any
     expandida: Boolean
 }
 
@@ -53,11 +53,9 @@ const Figure = styled.figure<PropsImage>`
 
 const Rodape = styled.footer`
     display: flex;
-    justify-content: space-between;
     align-items: center;
 `
 const Imagem = ({ foto, expandida = false, aoZoomSolicitado }: Props) => {
-    console.log(expandida, foto)
     return (<Figure $expandida={expandida} id={`foto-${foto.id}`}>
         <img src={foto.path} alt={foto.alt} />
         <figcaption>

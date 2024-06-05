@@ -2,7 +2,6 @@ import styled from "styled-components"
 import Populares from "./Populares"
 import Tags from "./Tags"
 import Title from "./Title"
-import Image from "./Image"
 import Imagem from "./Image"
 interface Fotos {
     titulo: string,
@@ -19,17 +18,16 @@ interface Props {
 }
 const GaleriaContainer = styled.div`
     display: flex;
+    margin-right: 25px;
 
 `
 const SecaoFluida = styled.section`
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
 `
 
 const ImagensContainer = styled.section`
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     gap: 24px;
 `
