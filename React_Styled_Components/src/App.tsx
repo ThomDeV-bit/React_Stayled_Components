@@ -4,8 +4,8 @@ import EstilosGlobais from "./components/GlobalStyles"
 import SideBar from "./components/SideBar"
 import Banner from "./components/Banner"
 import Galeria from "./components/Galeria"
-import fotos from './fotos.json'
-import { useEffect, useState } from "react"
+import fotos from './picturs.json'
+import { useState } from "react"
 import ModalZoom from "./components/ModalZoom"
 
 
@@ -38,8 +38,9 @@ const GaleriaSection = styled.section`
 
 
 const App = () => {
-  const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos)
-  const [fotoSelecionada, setFotoSelecionada] = useState(null)
+  const [pictureOfGallery, setPictureOfGallery] = useState(fotos)
+  const [selectedPicture, setSelectedPicture] = useState(null)
+
 
   return (
 
@@ -52,12 +53,13 @@ const App = () => {
           < GaleriaSection>
             <Banner />
             <Galeria
-              fotos={fotosDaGaleria}
-              aoFotoSelecionada={(foto: any) => setFotoSelecionada(foto)} />
+              pictures={pictureOfGallery}
+              onSelectPicture={(foto: any) => setSelectedPicture(foto)}
+            />
           </GaleriaSection>
         </MainContainer>
       </AppContainer>
-      <ModalZoom foto={fotoSelecionada} aoFechar={() => setFotoSelecionada(fotoSelecionada)}></ModalZoom>
+      <ModalZoom foto={selectedPicture} onClose={() => setSelectedPicture(selectedPicture)}></ModalZoom>
     </BackgroundGradient >
 
   )

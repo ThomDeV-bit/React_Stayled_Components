@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import Title from "../Title"
-import populares from '../../../populares.json'
+import populares from '../../../popular.json'
 
 
 const PopularesImagen = styled.figure`
@@ -35,7 +35,7 @@ const Populares = () => {
             <Title $align="center">Populares</Title>
             <PopularesImagen>
                 {populares.map(foto =>
-                    <img src={foto.path} ></img>
+                    <img src={foto.path} key={foto.id}></img>
                 )}
             </PopularesImagen>
             <PopularesBotoao>Ver mais</PopularesBotoao>

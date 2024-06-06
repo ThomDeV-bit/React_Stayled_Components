@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import BotaoIcone from "../../BotaoIcone";
+import BotaoIcone from "../../IconButton";
+import { useEffect, useState } from "react";
+import IconButton from "../../IconButton";
 
 interface Fotos {
     titulo: string,
@@ -12,17 +14,18 @@ interface Fotos {
 
 interface Props {
     foto: Fotos
-    aoZoomSolicitado?: any
-    expandida: Boolean
+    onZoom: (fotos: Fotos) => void
+    expanded: Boolean
+
 }
 
 interface PropsImage {
-    $expandida : Boolean
+    $expanded: Boolean
 }
 
 
 const Figure = styled.figure<PropsImage>`
-    width: ${(props: PropsImage) => (props.$expandida ? '90%' : '460px')};
+    width: ${(props: PropsImage) => (props.$expanded ? '90%' : '460px')};
     max-width: 100%;
     margin: 0;
     display: flex;
@@ -30,6 +33,7 @@ const Figure = styled.figure<PropsImage>`
     & > img {
         max-width: 100%;
         border-radius: 20px 20px 0 0;
+       
     }
     figcaption {
         background-color: #001634;
@@ -51,24 +55,35 @@ const Figure = styled.figure<PropsImage>`
     }
 `;
 
-const Rodape = styled.footer`
+const Footer = styled.footer`
     display: flex;
     align-items: center;
 `
-const Imagem = ({ foto, expandida = false, aoZoomSolicitado }: Props) => {
-    return (<Figure $expandida={expandida} id={`foto-${foto.id}`}>
+const Imagem = ({ foto, expanded = false, onZoom }: Props) => {
+
+    const [favorite, setFavorite] = useState(false)
+
+    const addFavorito = () => {
+        console.log(favorite)
+        setFavorite(true)
+    }
+
+    return (<Figure $expanded={expanded} id={`foto-${foto.id}`}>
         <img src={foto.path} alt={foto.alt} />
         <figcaption>
             <h3>{foto.titulo}</h3>
-            <Rodape>
+            <Footer>
                 <h4>{foto.fonte}</h4>
-                <BotaoIcone>
-                    <img src="/icones/favorito.png" alt="Icone de favorito" />
-                </BotaoIcone>
-                {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
+                <IconButton onClick={() => addFavorito()} >
+                    {!favorite ?
+                        <img src="/icones/favorito.png"></img>
+                        : ''
+                    }
+                </IconButton>
+                {!expanded && <IconButton aria-hidden={expanded} onClick={() => onZoom(foto)}>
                     <img src="/icones/expandir.png" alt="Icone de expandir" />
-                </BotaoIcone>}
-            </Rodape>
+                </IconButton>}
+            </Footer>
         </figcaption>
     </Figure>)
 }

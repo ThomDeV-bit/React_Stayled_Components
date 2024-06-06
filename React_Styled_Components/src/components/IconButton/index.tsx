@@ -1,6 +1,6 @@
 import { styled } from "styled-components"
 
-const BotaoIcone = styled.button`
+const IconButton = styled.button`
     margin-left: 12px;
     display: flex;
     align-items: center;
@@ -10,4 +10,4 @@ const BotaoIcone = styled.button`
     cursor: pointer;
 `
 
-export default BotaoIcone
+export default IconButton

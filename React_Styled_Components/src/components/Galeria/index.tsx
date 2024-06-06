@@ -1,9 +1,9 @@
 import styled from "styled-components"
-import Populares from "./Populares"
+import Populares from "./Popular"
 import Tags from "./Tags"
 import Title from "./Title"
 import Imagem from "./Image"
-interface Fotos {
+interface Pictures {
     titulo: string,
     fonte: string,
     path: string,
@@ -13,8 +13,9 @@ interface Fotos {
 }
 
 interface Props {
-    fotos: Fotos[]
-    aoFotoSelecionada: (foto: Fotos) => void
+    pictures: Pictures[]
+    onSelectPicture: (foto: Pictures) => void
+
 }
 const GaleriaContainer = styled.div`
     display: flex;
@@ -31,7 +32,7 @@ const ImagensContainer = styled.section`
     flex-wrap: wrap;
     gap: 24px;
 `
-const Galeria = ({ fotos, aoFotoSelecionada }: Props) => {
+const Galeria = ({ pictures, onSelectPicture, }: Props) => {
     return (
         <>
             <Tags></Tags>
@@ -39,11 +40,12 @@ const Galeria = ({ fotos, aoFotoSelecionada }: Props) => {
                 <SecaoFluida>
                     <Title>Navegue Pela Galeria</Title>
                     <ImagensContainer>
-                        {fotos.map(foto => <Imagem
-                            expandida={false}
-                            aoZoomSolicitado={aoFotoSelecionada}
-                            key={foto.id}
-                            foto={foto} />)
+                        {pictures.map(picture => <Imagem
+                            expanded={false}
+                            onZoom={onSelectPicture}
+                            key={picture.id}
+                            foto={picture}
+                        />)
                         }
                     </ImagensContainer>
                 </SecaoFluida>

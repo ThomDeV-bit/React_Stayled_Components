@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import Imagem from "../Galeria/Image"
-import BotaoIcone from "../BotaoIcone"
+import BotaoIcone from "../IconButton"
 import { useEffect, useState } from "react"
 
 interface Fotos {
@@ -15,9 +15,9 @@ interface Fotos {
 
 interface Props {
     foto: Fotos | null
-    aoZoomSolicitado?: any
-    expandida?: Boolean
-    aoFechar: () => void
+    onZoom?: any
+    expanded?: Boolean
+    onClose: any
 }
 
 const Overlay = styled.div`
@@ -64,7 +64,7 @@ const ModalZoom = ({ foto }: Props) => {
                 <>
                     <Overlay>
                         <DialogEstilizado open={!!foto} >
-                            <Imagem foto={foto} expandida={true} key={foto.id}></Imagem>
+                            <Imagem onZoom={() => foto} foto={foto} expanded={true} key={foto.id} ></Imagem>
                             <form method="dialog">
                                 <BotaoIcone onClick={modalFechado}>
                                     <img src="/icones/close.png" alt="icone de fechar"></img>
@@ -78,5 +78,4 @@ const ModalZoom = ({ foto }: Props) => {
 
     )
 }
-
 export default ModalZoom
