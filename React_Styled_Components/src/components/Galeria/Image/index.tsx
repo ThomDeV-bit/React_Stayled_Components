@@ -62,10 +62,12 @@ const Footer = styled.footer`
 const Imagem = ({ foto, expanded = false, onZoom }: Props) => {
 
     const [favorite, setFavorite] = useState(false)
-
     const addFavorito = () => {
-        console.log(favorite)
-        setFavorite(true)
+        if (favorite == true) {
+            setFavorite(false)
+        } else {
+            setFavorite(true)
+        }
     }
 
     return (<Figure $expanded={expanded} id={`foto-${foto.id}`}>
@@ -76,8 +78,8 @@ const Imagem = ({ foto, expanded = false, onZoom }: Props) => {
                 <h4>{foto.fonte}</h4>
                 <IconButton onClick={() => addFavorito()} >
                     {!favorite ?
-                        <img src="/icones/favorito.png"></img>
-                        : ''
+                        <img src="/icones/favorite_outline.png"></img>
+                        : <img src="/icones/favorito.png"></img>
                     }
                 </IconButton>
                 {!expanded && <IconButton aria-hidden={expanded} onClick={() => onZoom(foto)}>
