@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import BotaoIcone from "../../IconButton";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import IconButton from "../../IconButton";
 
 interface Fotos {

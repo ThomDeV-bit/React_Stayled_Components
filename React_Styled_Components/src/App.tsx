@@ -38,7 +38,7 @@ const GaleriaSection = styled.section`
 
 
 const App = () => {
-  const [pictureOfGallery, setPictureOfGallery] = useState(fotos)
+  const [pictureOfGallery] = useState(fotos)
   const [selectedPicture, setSelectedPicture] = useState(null)
 
 
